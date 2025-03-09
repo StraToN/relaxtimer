@@ -1,0 +1,139 @@
+[gd_scene load_steps=10 format=3 uid="uid://c0llwgujhjw1m"]
+
+[ext_resource type="Script" uid="uid://c81d8n0h5llmg" path="res://scenes/ui/exercices.gd" id="1_xam3f"]
+[ext_resource type="PackedScene" uid="uid://b4m8r5qd6obp8" path="res://scenes/ui/controls/spinners/spinner_values.tscn" id="2_pfgw5"]
+[ext_resource type="Script" uid="uid://ckx4ntcgys8gs" path="res://scenes/ui/screens.gd" id="3_vuxs4"]
+[ext_resource type="PackedScene" uid="uid://blrw0x88f2t04" path="res://scenes/exercises/vertical_relax.tscn" id="4_i601f"]
+[ext_resource type="PackedScene" uid="uid://bdpvg5tp4hcyv" path="res://scenes/exercises/square_relax.tscn" id="5_5uil1"]
+[ext_resource type="PackedScene" uid="uid://dfjkbrx8hxfvc" path="res://scenes/exercises/vertical_double_relax.tscn" id="5_pdjma"]
+[ext_resource type="PackedScene" uid="uid://dnqidkyffufep" path="res://scenes/ui/controls/dots_page_indicator/dots_page_indicator.tscn" id="6_gco7e"]
+[ext_resource type="PackedScene" uid="uid://ckbaxf5dnbheo" path="res://scenes/ui/controls/home_button.tscn" id="8_wncc1"]
+[ext_resource type="PackedScene" uid="uid://1gsapwnsbsvx" path="res://scenes/ui/controls/music_toggle.tscn" id="9_qlitg"]
+
+[node name="Exercices" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xam3f")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.117647, 0.321569, 0.486275, 1)
+metadata/_edit_lock_ = true
+
+[node name="total_duration_layer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -242.0
+offset_top = -306.0
+offset_right = 242.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="total_duration_layer"]
+layout_mode = 2
+
+[node name="exercice_duration" type="Label" parent="total_duration_layer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Durée d'exercice"
+horizontal_alignment = 1
+
+[node name="total_duration" parent="total_duration_layer/VBoxContainer" instance=ExtResource("2_pfgw5")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="start_button" type="Button" parent="total_duration_layer"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+text = "Démarrer"
+
+[node name="screens" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -720.0
+offset_bottom = -1279.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_vuxs4")
+
+[node name="screens" type="Control" parent="screens"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Vertical" parent="screens/screens" instance=ExtResource("4_i601f")]
+
+[node name="VerticalDouble" parent="screens/screens" instance=ExtResource("5_pdjma")]
+offset_left = 720.0
+offset_right = 720.0
+
+[node name="Square" parent="screens/screens" instance=ExtResource("5_5uil1")]
+offset_left = 1440.0
+offset_right = 1440.0
+
+[node name="stop_button" type="Button" parent="screens"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 233.0
+offset_top = 1130.0
+offset_right = 490.0
+offset_bottom = 1239.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Stop"
+
+[node name="dots_page_indicator" parent="screens" instance=ExtResource("6_gco7e")]
+layout_mode = 1
+offset_left = 330.0
+offset_top = 27.0
+offset_right = 330.0
+offset_bottom = 27.0
+spacing = 30.0
+radius = 10.0
+
+[node name="home_button" parent="." instance=ExtResource("8_wncc1")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+
+[node name="music_toggle" parent="." instance=ExtResource("9_qlitg")]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 856.0
+offset_right = 626.0
+offset_bottom = 956.0
+
+[connection signal="pressed" from="total_duration_layer/start_button" to="." method="_on_start_button_pressed"]
+[connection signal="exercice_finished" from="screens/screens/Vertical" to="." method="_on_exercice_finished"]
+[connection signal="exercice_finished" from="screens/screens/VerticalDouble" to="." method="_on_exercice_finished"]
+[connection signal="exercice_finished" from="screens/screens/Square" to="." method="_on_exercice_finished"]
+[connection signal="pressed" from="screens/stop_button" to="." method="_on_stop_button_pressed"]
+[connection signal="sound_toggled" from="music_toggle" to="." method="_on_music_toggle_sound_toggled"]

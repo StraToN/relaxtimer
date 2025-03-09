@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://csytwnyvf4ylt"]
+
+[ext_resource type="Script" uid="uid://dbi87buvbyspm" path="res://scenes/ui/controls/dots_page_indicator/dot.gd" id="1_q38qg"]
+
+[node name="Dot" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_q38qg")

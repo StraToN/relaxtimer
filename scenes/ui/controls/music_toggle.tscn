@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://1gsapwnsbsvx"]
+
+[ext_resource type="Texture2D" uid="uid://cam0epblkv5q7" path="res://dessin/musicOn.png" id="1_cnqe7"]
+[ext_resource type="Script" uid="uid://cunkbp721agbd" path="res://scenes/ui/controls/music_toggle.gd" id="2_4p2n0"]
+[ext_resource type="Texture2D" uid="uid://b3a0ao46gjj78" path="res://dessin/musicOn_pressed.png" id="3_ixmco"]
+[ext_resource type="Texture2D" uid="uid://dpntuhxnoj1wj" path="res://dessin/musicOff.png" id="4_yuxuu"]
+[ext_resource type="Texture2D" uid="uid://dwg5o0youpygx" path="res://dessin/musicOff_pressed.png" id="5_60sm1"]
+
+[node name="music_toggle" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_cnqe7")
+texture_pressed = ExtResource("3_ixmco")
+script = ExtResource("2_4p2n0")
+enabled_texture = ExtResource("1_cnqe7")
+enabled_pressed_texture = ExtResource("3_ixmco")
+disabled_texture = ExtResource("4_yuxuu")
+disabled_pressed_texture = ExtResource("5_60sm1")

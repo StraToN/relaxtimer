@@ -1,0 +1,189 @@
+[gd_scene load_steps=7 format=3 uid="uid://bdpvg5tp4hcyv"]
+
+[ext_resource type="Script" uid="uid://ds0me0eag4xma" path="res://scenes/exercises/square_relax.gd" id="1_hbqhc"]
+[ext_resource type="Texture2D" uid="uid://c46laxtja8sqd" path="res://dessin/g893.png" id="2_vy8nj"]
+[ext_resource type="Texture2D" uid="uid://c1pq76aspoysv" path="res://dessin/path1163-3-6.png" id="3_w16hj"]
+[ext_resource type="PackedScene" uid="uid://bihnbb5gf1n15" path="res://scenes/ui/controls/spinners/spinner.tscn" id="4_x6sb8"]
+[ext_resource type="PackedScene" uid="uid://rh3vvelne4xd" path="res://scenes/audio/audio.tscn" id="5_dr6jd"]
+
+[sub_resource type="Curve2D" id="Curve2D_ij2wb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 38, 34, 0, 0, 0, 0, 439, 34, 0, 0, 0, 0, 439, 439, 0, 0, 0, 0, 38, 439, 0, 0, 0, 0, 38, 34)
+}
+point_count = 5
+
+[node name="Square" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_hbqhc")
+
+[node name="gap" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 132.0
+offset_top = 262.0
+offset_right = 172.0
+offset_bottom = 302.0
+
+[node name="up" type="NinePatchRect" parent="gap"]
+modulate = Color(0.494118, 0.67451, 0.8, 1)
+layout_mode = 2
+offset_top = -4.0
+offset_right = 76.0
+offset_bottom = 473.0
+rotation = 1.57079
+scale = Vector2(1, -1)
+texture = ExtResource("2_vy8nj")
+region_rect = Rect2(0, 0, 76, 150)
+patch_margin_top = 40
+patch_margin_bottom = 40
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="left" type="NinePatchRect" parent="gap"]
+modulate = Color(0.494118, 0.67451, 0.8, 1)
+layout_mode = 2
+offset_top = -4.0
+offset_right = 76.0
+offset_bottom = 473.0
+texture = ExtResource("2_vy8nj")
+region_rect = Rect2(0, 0, 76, 150)
+patch_margin_top = 40
+patch_margin_bottom = 40
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="right" type="NinePatchRect" parent="gap"]
+modulate = Color(0.494118, 0.67451, 0.8, 1)
+layout_mode = 2
+offset_left = 401.0
+offset_top = -4.0
+offset_right = 477.0
+offset_bottom = 473.0
+texture = ExtResource("2_vy8nj")
+region_rect = Rect2(0, 0, 76, 150)
+patch_margin_top = 40
+patch_margin_bottom = 40
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="down" type="NinePatchRect" parent="gap"]
+modulate = Color(0.494118, 0.67451, 0.8, 1)
+layout_mode = 2
+offset_top = 477.0
+offset_right = 76.0
+offset_bottom = 954.0
+rotation = -1.57079
+texture = ExtResource("2_vy8nj")
+region_rect = Rect2(0, 0, 76, 150)
+patch_margin_top = 40
+patch_margin_bottom = 40
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Path2D" type="Path2D" parent="gap"]
+curve = SubResource("Curve2D_ij2wb")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="gap/Path2D"]
+position = Vector2(38, 302.722)
+rotation = -1.5708
+progress = 1343.28
+
+[node name="ball" type="Sprite2D" parent="gap/Path2D/PathFollow2D"]
+modulate = Color(0.290196, 0.392157, 0.466667, 1)
+texture = ExtResource("3_w16hj")
+
+[node name="action" type="Label" parent="gap"]
+layout_mode = 2
+offset_left = 77.0
+offset_top = 210.0
+offset_right = 400.0
+offset_bottom = 279.0
+theme_override_font_sizes/font_size = 50
+text = "{0}"
+horizontal_alignment = 1
+
+[node name="step_config" type="Control" parent="gap"]
+layout_mode = 2
+anchors_preset = 0
+offset_top = -4.0
+offset_right = 40.0
+offset_bottom = 76.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="gap/step_config"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = -85.0
+offset_right = 393.0
+offset_bottom = 61.0
+
+[node name="top_spinner" parent="gap/step_config/VBoxContainer" instance=ExtResource("4_x6sb8")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="gap/step_config/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Inspiration"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="gap/step_config"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 409.0
+offset_right = 391.0
+offset_bottom = 555.0
+
+[node name="Label" type="Label" parent="gap/step_config/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Expiration"
+horizontal_alignment = 1
+
+[node name="down_spinner" parent="gap/step_config/VBoxContainer2" instance=ExtResource("4_x6sb8")]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="gap/step_config"]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 178.0
+offset_right = 580.0
+offset_bottom = 324.0
+
+[node name="Label" type="Label" parent="gap/step_config/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Suspendre"
+horizontal_alignment = 1
+
+[node name="right_spinner" parent="gap/step_config/VBoxContainer3" instance=ExtResource("4_x6sb8")]
+layout_mode = 2
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="gap/step_config"]
+layout_mode = 0
+offset_left = -119.0
+offset_top = 199.0
+offset_right = 193.0
+offset_bottom = 345.0
+
+[node name="left_spinner" parent="gap/step_config/VBoxContainer4" instance=ExtResource("4_x6sb8")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="gap/step_config/VBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Suspendre"
+horizontal_alignment = 1
+
+[node name="audio" parent="." instance=ExtResource("5_dr6jd")]
+
+[connection signal="value_changed" from="gap/step_config/VBoxContainer/top_spinner" to="." method="_on_top_spinner_value_changed"]
+[connection signal="value_changed" from="gap/step_config/VBoxContainer2/down_spinner" to="." method="_on_down_spinner_value_changed"]
+[connection signal="value_changed" from="gap/step_config/VBoxContainer3/right_spinner" to="." method="_on_right_spinner_value_changed"]
+[connection signal="value_changed" from="gap/step_config/VBoxContainer4/left_spinner" to="." method="_on_left_spinner_value_changed"]

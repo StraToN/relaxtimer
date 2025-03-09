@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://rh3vvelne4xd"]
+
+[ext_resource type="AudioStream" uid="uid://bwoxtlafwb1d5" path="res://audio/relaxing-bell-ding-sound_aigu.ogg" id="1_3u06m"]
+[ext_resource type="AudioStream" uid="uid://ciow62c4hd20e" path="res://audio/relaxing-bell-ding-sound_grave.ogg" id="2_eyfyw"]
+
+[node name="audio" type="Node"]
+
+[node name="ding_high" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_3u06m")
+
+[node name="ding_low" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_eyfyw")

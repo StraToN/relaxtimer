@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=3 uid="uid://bot7h4f5ge5pg"]
+
+[ext_resource type="PackedScene" uid="uid://ckbaxf5dnbheo" path="res://scenes/ui/controls/home_button.tscn" id="1_gq3nc"]
+[ext_resource type="Texture2D" uid="uid://d32gudjqkt1jd" path="res://dessin/donate.png" id="1_jq7dq"]
+[ext_resource type="Script" uid="uid://d2fvmlqhvddg" path="res://scenes/information/information.gd" id="1_xjcgm"]
+
+[node name="Information" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xjcgm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.117647, 0.321569, 0.486275, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label1" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[font size=33]Bienvenue sur RelaxTimer !
+
+RelaxTimer est une application proposant des exercices de respiration pour vous détendre à tout moment.
+
+[ul]
+RelaxTimer restera toujours gratuit et sans publicité.
+Si vous appréciez l'application, vous pouvez soutenir son développement en faisant un don. Cliquez sur le bouton ci-dessous pour contribuer.[/ul]
+
+
+[ul]
+Libre et open source : RelaxTimer est sous licence GPL. Cela signifie que vous pouvez librement utiliser, modifier et partager l'application. Vous pouvez même contribuer à son amélioration ! [url=https://github.com/StraToN/relaxtimer]Cliquez ici pour accéder au code source.[/url]
+[/ul]
+
+Merci de votre soutien et bonne relaxation !
+
+              Julian Murgia, développeur
+[/font]"
+fit_content = true
+
+[node name="home_button" parent="." instance=ExtResource("1_gq3nc")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+size_flags_horizontal = 0
+
+[node name="Donate" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.5
+offset_top = -49.5
+offset_right = 88.5
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_jq7dq")
+stretch_mode = 4
+
+[connection signal="meta_clicked" from="MarginContainer/VBoxContainer/Label1" to="." method="_on_label_1_meta_clicked"]
+[connection signal="pressed" from="Donate" to="." method="_on_donate_pressed"]

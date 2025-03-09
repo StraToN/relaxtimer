@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://blrw0x88f2t04"]
+
+[ext_resource type="Script" uid="uid://cnldnuqg2awta" path="res://scenes/exercises/vertical_relax.gd" id="1_1ipme"]
+[ext_resource type="Texture2D" uid="uid://c46laxtja8sqd" path="res://dessin/g893.png" id="2_1jk4i"]
+[ext_resource type="Texture2D" uid="uid://c1pq76aspoysv" path="res://dessin/path1163-3-6.png" id="3_37fqq"]
+[ext_resource type="PackedScene" uid="uid://bihnbb5gf1n15" path="res://scenes/ui/controls/spinners/spinner.tscn" id="3_c3ply"]
+[ext_resource type="PackedScene" uid="uid://rh3vvelne4xd" path="res://scenes/audio/audio.tscn" id="5_rvm1i"]
+
+[sub_resource type="Curve2D" id="Curve2D_ij2wb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 38, 862, 0, 0, 0, 0, 38, 38)
+}
+point_count = 2
+
+[node name="Vertical" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1ipme")
+quad_size = 900
+
+[node name="gap" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 322.0
+offset_top = 50.0
+offset_right = 362.0
+offset_bottom = 90.0
+
+[node name="left" type="NinePatchRect" parent="gap"]
+modulate = Color(0.494118, 0.67451, 0.8, 1)
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.9995
+offset_top = -20.0
+offset_right = 56.0005
+offset_bottom = 880.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1jk4i")
+region_rect = Rect2(0, 0, 76, 150)
+patch_margin_top = 40
+patch_margin_bottom = 40
+axis_stretch_vertical = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Path2D" type="Path2D" parent="gap"]
+curve = SubResource("Curve2D_ij2wb")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="gap/Path2D"]
+position = Vector2(38, 862)
+rotation = -1.5708
+
+[node name="ball" type="Sprite2D" parent="gap/Path2D/PathFollow2D"]
+modulate = Color(0.290196, 0.392157, 0.466667, 1)
+texture = ExtResource("3_37fqq")
+
+[node name="action" type="Label" parent="gap"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -241.999
+offset_top = 900.0
+offset_right = 276.0
+offset_bottom = 969.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "{0}"
+horizontal_alignment = 1
+
+[node name="step_config" type="VBoxContainer" parent="gap"]
+layout_mode = 0
+offset_left = -242.0
+offset_top = 363.5
+offset_right = 313.001
+offset_bottom = 536.5
+
+[node name="Label" type="Label" parent="gap/step_config"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Inspiration / Expiration"
+horizontal_alignment = 1
+
+[node name="step_duration" parent="gap/step_config" instance=ExtResource("3_c3ply")]
+layout_mode = 2
+size_flags_horizontal = 4
+value = 5
+
+[node name="audio" parent="." instance=ExtResource("5_rvm1i")]

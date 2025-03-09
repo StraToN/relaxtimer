@@ -1,0 +1,10 @@
+android/
+android/*
+export/
+export/*
+exports/
+exports/*
+.godot/
+.godot/*
+test/*
+

@@ -1,2 +1,3 @@
-# relaxtimer
+# RelaxTimer
+
 Breathing exercices application
