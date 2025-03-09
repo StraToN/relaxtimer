@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="assets.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     showguides="true"
+     inkscape:zoom="3.9650703"
+     inkscape:cx="160.02238"
+     inkscape:cy="80.452546"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid509" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Calque 1"
+     id="layer1"
+     inkscape:highlight-color="255">
+    <circle
+       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:0.988492"
+       id="path1163-3-6"
+       inkscape:label="Bubble"
+       sodipodi:type="arc"
+       sodipodi:cx="-10"
+       sodipodi:cy="10"
+       sodipodi:rx="10"
+       sodipodi:ry="10"
+       sodipodi:start="6.2762711"
+       sodipodi:end="6.2761738"
+       sodipodi:open="true"
+       sodipodi:arc-type="arc"
+       d="M -2.3903035e-4,9.9308585 A 10,10 0 0 1 -9.9306152,19.999759 10,10 0 0 1 -19.999758,10.069628 10,10 0 0 1 -10.069871,2.4410258e-4 10,10 0 0 1 -2.4580516e-4,9.9298855"
+       inkscape:export-filename="/home/julianmurgia/Programming/RelaxTimer/relaxtimer/dessin/path1163-3-6.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       transform="rotate(-90)" />
+    <g
+       id="g893"
+       transform="matrix(1.1764703,0,0,1.1566264,-32.681448,-61.66435)"
+       inkscape:label="Vertical"
+       style="opacity:1;fill:#ffffff">
+      <rect
+         style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.265719"
+         id="rect31"
+         width="17.000004"
+         height="34.313152"
+         x="45.770908"
+         y="53.313976"
+         ry="8.5000019"
+         rx="8.5000019" />
+    </g>
+  </g>
+</svg>

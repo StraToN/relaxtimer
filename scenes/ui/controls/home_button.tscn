@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckbaxf5dnbheo"]
+
+[ext_resource type="Texture2D" uid="uid://dgalj5k7styh6" path="res://dessin/home.png" id="1_bcpyj"]
+[ext_resource type="Texture2D" uid="uid://dmhpfg7ftkcq5" path="res://dessin/home_pressed.png" id="2_2wf7c"]
+[ext_resource type="Script" uid="uid://csubwxl85bwx1" path="res://scenes/ui/controls/home_button.gd" id="3_2wf7c"]
+
+[node name="home_button" type="TextureButton"]
+anchors_preset = -1
+anchor_top = 0.99
+anchor_right = 0.01
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_right = 100.0
+grow_vertical = 0
+texture_normal = ExtResource("1_bcpyj")
+texture_pressed = ExtResource("2_2wf7c")
+script = ExtResource("3_2wf7c")
+
+[connection signal="pressed" from="." to="." method="_on_home_button_pressed"]

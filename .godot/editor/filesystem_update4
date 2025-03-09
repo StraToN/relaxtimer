@@ -1,0 +1,9 @@
+res://scenes/ui/main.tscn
+res://scenes/ui/main.gd
+res://scenes/ui/exercices.tscn
+res://scenes/statistics/new_statistics.tscn
+res://scenes/exercises/vertical_relax.tscn
+res://scenes/information/information.tscn
+res://i18n/en.mo
+res://i18n/en.po
+res://scenes/information/information.gd

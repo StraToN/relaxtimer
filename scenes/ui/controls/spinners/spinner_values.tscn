@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4m8r5qd6obp8"]
+
+[ext_resource type="Script" uid="uid://l0wdgm3xp81p" path="res://scenes/ui/controls/spinners/spinner_values.gd" id="1_i0ule"]
+[ext_resource type="Texture2D" uid="uid://q35efs4ols8w" path="res://dessin/minus.png" id="2_ra7b0"]
+[ext_resource type="Texture2D" uid="uid://mdajkv8cu445" path="res://dessin/plus.png" id="3_0u10j"]
+
+[node name="spinner" type="GridContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 3
+script = ExtResource("1_i0ule")
+
+[node name="down_button" type="TextureButton" parent="."]
+layout_mode = 2
+texture_normal = ExtResource("2_ra7b0")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="."]
+clip_contents = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "{0} s"
+
+[node name="up_button" type="TextureButton" parent="."]
+layout_mode = 2
+texture_normal = ExtResource("3_0u10j")
+stretch_mode = 0
+
+[connection signal="pressed" from="down_button" to="." method="_on_down_button_pressed"]
+[connection signal="pressed" from="up_button" to="." method="_on_up_button_pressed"]

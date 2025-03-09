@@ -1,0 +1,160 @@
+[gd_scene load_steps=12 format=3 uid="uid://dsd7jxcqckkgl"]
+
+[ext_resource type="Texture2D" uid="uid://drf6scw8j7q5g" path="res://dessin/trophy.png" id="1_ldvif"]
+[ext_resource type="Script" uid="uid://cjevpo2c7c1n6" path="res://scenes/ui/main.gd" id="1_s22x3"]
+[ext_resource type="Texture2D" uid="uid://dlbjwb8cxmm27" path="res://dessin/signal3.png" id="2_2schx"]
+[ext_resource type="Texture2D" uid="uid://81eetwgojacd" path="res://dessin/exit_pressed.png" id="4_aain1"]
+[ext_resource type="Texture2D" uid="uid://g3666amxmkch" path="res://dessin/trophy_pressed.png" id="4_dpyut"]
+[ext_resource type="Texture2D" uid="uid://cfbetvyqwal6a" path="res://dessin/exit.png" id="4_y1pit"]
+[ext_resource type="Texture2D" uid="uid://2uo8bp5i6e72" path="res://dessin/information.png" id="5_jvuow"]
+[ext_resource type="Texture2D" uid="uid://bqfrdqbqbisy1" path="res://logo.png" id="5_m4ehd"]
+[ext_resource type="Texture2D" uid="uid://cp7e0250roqr4" path="res://dessin/signal3_pressed.png" id="6_t1dln"]
+[ext_resource type="Texture2D" uid="uid://dqti1le8isrni" path="res://dessin/signal3_disabled.png" id="7_t1dln"]
+[ext_resource type="Texture2D" uid="uid://bohm0fn0qbi33" path="res://dessin/information_pressed.png" id="8_x68jn"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s22x3")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.117647, 0.321569, 0.486275, 1)
+metadata/_edit_lock_ = true
+
+[node name="version_number" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "version_number"
+horizontal_alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 20
+
+[node name="VFlowContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Logo" type="TextureRect" parent="MarginContainer/VFlowContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_m4ehd")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/VFlowContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 95
+text = "RelaxTimer"
+horizontal_alignment = 1
+
+[node name="buttons" type="GridContainer" parent="MarginContainer/VFlowContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/h_separation = 50
+columns = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VFlowContainer/buttons"]
+layout_mode = 2
+
+[node name="exercises_button" type="TextureButton" parent="MarginContainer/VFlowContainer/buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_ldvif")
+texture_pressed = ExtResource("4_dpyut")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VFlowContainer/buttons/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Exercices"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VFlowContainer/buttons"]
+visible = false
+layout_mode = 2
+
+[node name="statistics_button" type="TextureButton" parent="MarginContainer/VFlowContainer/buttons/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+disabled = true
+texture_normal = ExtResource("2_2schx")
+texture_pressed = ExtResource("6_t1dln")
+texture_disabled = ExtResource("7_t1dln")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VFlowContainer/buttons/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Statistiques"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/VFlowContainer/buttons"]
+layout_mode = 2
+
+[node name="info_button" type="TextureButton" parent="MarginContainer/VFlowContainer/buttons/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_jvuow")
+texture_pressed = ExtResource("8_x68jn")
+stretch_mode = 0
+
+[node name="Infos" type="Label" parent="MarginContainer/VFlowContainer/buttons/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Informations"
+horizontal_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/VFlowContainer/buttons"]
+layout_mode = 2
+
+[node name="exit_button" type="TextureButton" parent="MarginContainer/VFlowContainer/buttons/VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_y1pit")
+texture_pressed = ExtResource("4_aain1")
+stretch_mode = 0
+
+[node name="Quitter" type="Label" parent="MarginContainer/VFlowContainer/buttons/VBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Quitter"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/VFlowContainer/buttons/VBoxContainer/exercises_button" to="." method="_on_exercises_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VFlowContainer/buttons/VBoxContainer2/statistics_button" to="." method="_on_statistics_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VFlowContainer/buttons/VBoxContainer3/info_button" to="." method="_on_info_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VFlowContainer/buttons/VBoxContainer4/exit_button" to="." method="_on_exit_button_pressed"]

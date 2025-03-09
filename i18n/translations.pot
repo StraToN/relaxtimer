@@ -1,0 +1,86 @@
+# LANGUAGE translation for RelaxTimer for the following files:
+# res://scenes/ui/exercices.gd
+# res://scenes/ui/exercices.tscn
+# res://scenes/ui/main.gd
+# res://scenes/ui/main.tscn
+# res://scenes/ui/screens.gd
+# res://scenes/exercises/square_relax.gd
+# res://scenes/exercises/square_relax.tscn
+# res://scenes/exercises/vertical_double_relax.gd
+# res://scenes/exercises/vertical_double_relax.tscn
+# res://scenes/exercises/vertical_relax.gd
+# res://scenes/exercises/vertical_relax.tscn
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: RelaxTimer\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: scenes/ui/exercices.tscn
+msgid "Durée d'exercice"
+msgstr ""
+
+#: scenes/ui/exercices.tscn
+msgid "Démarrer"
+msgstr ""
+
+#: scenes/ui/exercices.tscn
+msgid "Stop"
+msgstr ""
+
+#: scenes/ui/main.tscn
+msgid "version_number"
+msgstr ""
+
+#: scenes/ui/main.tscn
+msgid "RelaxTimer"
+msgstr ""
+
+#: scenes/ui/main.tscn
+msgid "Exercices"
+msgstr ""
+
+#: scenes/ui/main.tscn
+msgid "Statistiques"
+msgstr ""
+
+#: scenes/ui/main.tscn
+msgid "Informations"
+msgstr ""
+
+#: scenes/ui/main.tscn
+msgid "Quitter"
+msgstr ""
+
+#: scenes/exercises/square_relax.tscn
+#: scenes/exercises/vertical_double_relax.tscn
+#: scenes/exercises/vertical_relax.tscn
+msgid "{0}"
+msgstr ""
+
+#: scenes/exercises/square_relax.tscn
+#: scenes/exercises/vertical_double_relax.tscn
+msgid "Inspiration"
+msgstr ""
+
+#: scenes/exercises/square_relax.tscn
+#: scenes/exercises/vertical_double_relax.tscn
+msgid "Expiration"
+msgstr ""
+
+#: scenes/exercises/square_relax.tscn
+msgid "Suspendre"
+msgstr ""
+
+#: scenes/exercises/vertical_double_relax.tscn
+msgid "8 s"
+msgstr ""
+
+#: scenes/exercises/vertical_relax.tscn
+msgid "Inspiration / Expiration"
+msgstr ""
