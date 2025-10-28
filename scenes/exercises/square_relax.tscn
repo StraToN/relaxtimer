@@ -26,7 +26,7 @@ offset_bottom = 302.0
 
 [node name="up" type="NinePatchRect" parent="gap"]
 modulate = Color(0.494118, 0.67451, 0.8, 1)
-layout_mode = 2
+layout_mode = 0
 offset_top = -4.0
 offset_right = 76.0
 offset_bottom = 473.0
@@ -43,7 +43,7 @@ metadata/_edit_lock_ = true
 
 [node name="left" type="NinePatchRect" parent="gap"]
 modulate = Color(0.494118, 0.67451, 0.8, 1)
-layout_mode = 2
+layout_mode = 0
 offset_top = -4.0
 offset_right = 76.0
 offset_bottom = 473.0
@@ -58,7 +58,7 @@ metadata/_edit_lock_ = true
 
 [node name="right" type="NinePatchRect" parent="gap"]
 modulate = Color(0.494118, 0.67451, 0.8, 1)
-layout_mode = 2
+layout_mode = 0
 offset_left = 401.0
 offset_top = -4.0
 offset_right = 477.0
@@ -74,7 +74,7 @@ metadata/_edit_lock_ = true
 
 [node name="down" type="NinePatchRect" parent="gap"]
 modulate = Color(0.494118, 0.67451, 0.8, 1)
-layout_mode = 2
+layout_mode = 0
 offset_top = 477.0
 offset_right = 76.0
 offset_bottom = 954.0
@@ -92,8 +92,8 @@ metadata/_edit_lock_ = true
 curve = SubResource("Curve2D_ij2wb")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="gap/Path2D"]
-position = Vector2(38, 302.722)
-rotation = -1.5708
+position = Vector2(38, 302.7222)
+rotation = -1.5707964
 progress = 1343.28
 
 [node name="ball" type="Sprite2D" parent="gap/Path2D/PathFollow2D"]
@@ -101,7 +101,7 @@ modulate = Color(0.290196, 0.392157, 0.466667, 1)
 texture = ExtResource("3_w16hj")
 
 [node name="action" type="Label" parent="gap"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 77.0
 offset_top = 210.0
 offset_right = 400.0
@@ -111,7 +111,6 @@ text = "{0}"
 horizontal_alignment = 1
 
 [node name="step_config" type="Control" parent="gap"]
-layout_mode = 2
 anchors_preset = 0
 offset_top = -4.0
 offset_right = 40.0

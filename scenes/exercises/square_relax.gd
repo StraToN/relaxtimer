@@ -52,6 +52,7 @@ var _sound_enabled: bool = true
 func _ready():
 	_is_ready = true
 	set_process(false)
+	$gap/action.text = ""
 
 
 func _set_quad_size(new_size: int):

@@ -2,7 +2,15 @@ extends Control
 
 const updateDownloadUrl = "https://cloud.murgia.fr/s/by9Z7D5Y2Hyszdk"
 
+var musics = [
+	"res://audio/001_Synthwave_4k.mp3",
+	"res://audio/002_Synthwave_15k.mp3",
+	"res://audio/006_lifeWave2k.mp3",
+	"res://audio/007_Synthwave_421k.mp3"
+]
+
 func _ready():
+	randomize()
 	var language = "automatic"
 	# Load here language from the user settings file
 	if language == "automatic":
@@ -11,9 +19,13 @@ func _ready():
 	else:
 		TranslationServer.set_locale(language)
 	$version_number.text = "v%s" % ProjectSettings.get_setting("application/config/version")
+	$music_player.stream = load(musics[randi() % musics.size()])
+	$music_player.play()
+	
 
 func _on_exercises_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/ui/exercices.tscn")
+	var exercise_scene_instance = preload("res://scenes/ui/exercices.tscn").instantiate()
+	add_child(exercise_scene_instance)
 
 func _on_statistics_button_pressed():
 	pass # Replace with function body.

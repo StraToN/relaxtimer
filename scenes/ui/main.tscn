@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dsd7jxcqckkgl"]
+[gd_scene load_steps=13 format=3 uid="uid://dsd7jxcqckkgl"]
 
 [ext_resource type="Texture2D" uid="uid://drf6scw8j7q5g" path="res://dessin/trophy.png" id="1_ldvif"]
 [ext_resource type="Script" uid="uid://cjevpo2c7c1n6" path="res://scenes/ui/main.gd" id="1_s22x3"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cp7e0250roqr4" path="res://dessin/signal3_pressed.png" id="6_t1dln"]
 [ext_resource type="Texture2D" uid="uid://dqti1le8isrni" path="res://dessin/signal3_disabled.png" id="7_t1dln"]
 [ext_resource type="Texture2D" uid="uid://bohm0fn0qbi33" path="res://dessin/information_pressed.png" id="8_x68jn"]
+[ext_resource type="AudioStream" uid="uid://b3cv8axen7jf2" path="res://audio/001_Synthwave_4k.mp3" id="12_x68jn"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -153,6 +154,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Quitter"
 horizontal_alignment = 1
+
+[node name="music_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_x68jn")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="MarginContainer/VFlowContainer/buttons/VBoxContainer/exercises_button" to="." method="_on_exercises_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VFlowContainer/buttons/VBoxContainer2/statistics_button" to="." method="_on_statistics_button_pressed"]

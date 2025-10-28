@@ -1,9 +1,13 @@
 extends Control
 
-var current_screen: Node
-
+var current_screen: Node:
+	get = _get_current_screen
+	
 var new_statistics = preload("res://scenes/statistics/new_statistics.tscn")
 
+func _ready():
+	pass
+	
 func _on_start_button_pressed():
 	current_screen = $screens.current_screen
 	var total_duration_sec = $total_duration_layer/VBoxContainer/total_duration.get_value_secs()
@@ -30,3 +34,7 @@ func _on_stop_button_pressed():
 
 func _on_music_toggle_sound_toggled(state):
 	current_screen.set_sound(state)
+
+
+func _get_current_screen() -> Node:
+	return $screens.current_screen

@@ -7,6 +7,8 @@
 
 [node name="ding_high" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_3u06m")
+bus = &"SFX"
 
 [node name="ding_low" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_eyfyw")
+bus = &"SFX"
